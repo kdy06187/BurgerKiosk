@@ -105,6 +105,7 @@
             rdoChickenBurger.TabStop = true;
             rdoChickenBurger.Text = "치킨버거";
             rdoChickenBurger.UseVisualStyleBackColor = true;
+            rdoChickenBurger.CheckedChanged += rdoChickenBurger_CheckedChanged;
             // 
             // pbxBulgogiBurger
             // 
@@ -128,6 +129,7 @@
             rdoBulgogiBurger.TabStop = true;
             rdoBulgogiBurger.Text = "불고기버거";
             rdoBulgogiBurger.UseVisualStyleBackColor = true;
+            rdoBulgogiBurger.CheckedChanged += rdoBulgogiBurger_CheckedChanged;
             // 
             // pbxHamBurger
             // 
@@ -151,6 +153,7 @@
             rdoHamBurger.TabStop = true;
             rdoHamBurger.Text = "햄버거";
             rdoHamBurger.UseVisualStyleBackColor = true;
+            rdoHamBurger.CheckedChanged += rdoHamBurger_CheckedChanged;
             // 
             // gbxOption
             // 
@@ -178,6 +181,7 @@
             chkSauce.TabStop = false;
             chkSauce.Text = "소스 추가";
             chkSauce.UseVisualStyleBackColor = true;
+            chkSauce.CheckedChanged += chkSauce_CheckedChanged;
             // 
             // chkCheese
             // 
@@ -190,6 +194,7 @@
             chkCheese.TabStop = false;
             chkCheese.Text = "치즈 추가";
             chkCheese.UseVisualStyleBackColor = true;
+            chkCheese.CheckedChanged += chkCheese_CheckedChanged;
             // 
             // chkCola
             // 
@@ -202,6 +207,7 @@
             chkCola.TabStop = false;
             chkCola.Text = "콜라";
             chkCola.UseVisualStyleBackColor = true;
+            chkCola.CheckedChanged += chkCola_CheckedChanged;
             // 
             // chkPotato
             // 
@@ -213,6 +219,7 @@
             chkPotato.TabIndex = 0;
             chkPotato.Text = "감자튀김";
             chkPotato.UseVisualStyleBackColor = true;
+            chkPotato.CheckedChanged += chkPotato_CheckedChanged;
             // 
             // gbxOrder
             // 
@@ -259,7 +266,6 @@
             btnOrder.Text = "주문하기";
             btnOrder.UseVisualStyleBackColor = false;
             btnOrder.Click += btnOrder_Click;
-            btnOrder.KeyDown += btnOrder_KeyDown;
             // 
             // btnInit
             // 
@@ -288,6 +294,7 @@
             // 
             // Form1
             // 
+            AcceptButton = btnOrder;
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1394, 730);
