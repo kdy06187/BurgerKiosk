@@ -6,18 +6,20 @@ namespace BurgerKiosk
         public Form1()
         {
             InitializeComponent();
-            Clear();
+            // 폼이 시작될 때 라디오 버튼이 강제로 선택 방지
+            this.ActiveControl = lblTitle;
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            // 에러 메시지 표시
             if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
             {
                 //MessageBox.Show("메뉴를선택하세요.");
                 lblError.Visible = true;
                 return;
             }
-
+            // 주문 버튼 로직
             if (rdoHamBurger.Checked)
             {
                 totalCost += 5000;
@@ -55,7 +57,7 @@ namespace BurgerKiosk
                 lstOrder.Items.Add("소스 추가 500원");
             }
 
-
+            // 총 금액 표시
             lblTotalCost.Text = "총금액: " + totalCost.ToString("N0") + "원";
 
         }
@@ -64,11 +66,15 @@ namespace BurgerKiosk
         {
             Clear();
         }
+        // 초기화 버튼 로직
         private void Clear()
         {
             rdoHamBurger.Checked = false;
             rdoBulgogiBurger.Checked = false;
             rdoChickenBurger.Checked = false;
+
+            rdoHamBurger.TabStop = true;
+
             chkPotato.Checked = false;
             chkCola.Checked = false;
             chkCheese.Checked = false;
@@ -87,6 +93,12 @@ namespace BurgerKiosk
             }
         }
 
-        
+        private void btnInit_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnInit_Click(sender, e);
+            }
+        }
     }
 }

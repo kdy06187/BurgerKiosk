@@ -102,6 +102,7 @@
             rdoChickenBurger.Name = "rdoChickenBurger";
             rdoChickenBurger.Size = new Size(179, 49);
             rdoChickenBurger.TabIndex = 2;
+            rdoChickenBurger.TabStop = true;
             rdoChickenBurger.Text = "치킨버거";
             rdoChickenBurger.UseVisualStyleBackColor = true;
             // 
@@ -124,6 +125,7 @@
             rdoBulgogiBurger.Name = "rdoBulgogiBurger";
             rdoBulgogiBurger.Size = new Size(211, 49);
             rdoBulgogiBurger.TabIndex = 1;
+            rdoBulgogiBurger.TabStop = true;
             rdoBulgogiBurger.Text = "불고기버거";
             rdoBulgogiBurger.UseVisualStyleBackColor = true;
             // 
@@ -146,6 +148,7 @@
             rdoHamBurger.Name = "rdoHamBurger";
             rdoHamBurger.Size = new Size(147, 49);
             rdoHamBurger.TabIndex = 0;
+            rdoHamBurger.TabStop = true;
             rdoHamBurger.Text = "햄버거";
             rdoHamBurger.UseVisualStyleBackColor = true;
             // 
@@ -172,6 +175,7 @@
             chkSauce.Name = "chkSauce";
             chkSauce.Size = new Size(191, 49);
             chkSauce.TabIndex = 3;
+            chkSauce.TabStop = false;
             chkSauce.Text = "소스 추가";
             chkSauce.UseVisualStyleBackColor = true;
             // 
@@ -183,6 +187,7 @@
             chkCheese.Name = "chkCheese";
             chkCheese.Size = new Size(191, 49);
             chkCheese.TabIndex = 2;
+            chkCheese.TabStop = false;
             chkCheese.Text = "치즈 추가";
             chkCheese.UseVisualStyleBackColor = true;
             // 
@@ -194,6 +199,7 @@
             chkCola.Name = "chkCola";
             chkCola.Size = new Size(116, 49);
             chkCola.TabIndex = 1;
+            chkCola.TabStop = false;
             chkCola.Text = "콜라";
             chkCola.UseVisualStyleBackColor = true;
             // 
@@ -239,6 +245,7 @@
             lstOrder.Name = "lstOrder";
             lstOrder.Size = new Size(390, 229);
             lstOrder.TabIndex = 0;
+            lstOrder.TabStop = false;
             // 
             // btnOrder
             // 
@@ -266,6 +273,7 @@
             btnInit.Text = "초기화";
             btnInit.UseVisualStyleBackColor = false;
             btnInit.Click += btnInit_Click;
+            btnInit.KeyDown += btnInit_KeyDown;
             // 
             // lblError
             // 
