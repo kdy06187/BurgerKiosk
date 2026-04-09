@@ -45,7 +45,8 @@
             lblTotalCost = new Label();
             lstOrder = new ListBox();
             btnOrder = new Button();
-            btnClear = new Button();
+            btnInit = new Button();
+            lblError = new Label();
             gbxMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxChickenBurger).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxBulgogiBurger).BeginInit();
@@ -100,8 +101,7 @@
             rdoChickenBurger.Location = new Point(20, 422);
             rdoChickenBurger.Name = "rdoChickenBurger";
             rdoChickenBurger.Size = new Size(179, 49);
-            rdoChickenBurger.TabIndex = 4;
-            rdoChickenBurger.TabStop = true;
+            rdoChickenBurger.TabIndex = 2;
             rdoChickenBurger.Text = "치킨버거";
             rdoChickenBurger.UseVisualStyleBackColor = true;
             // 
@@ -123,8 +123,7 @@
             rdoBulgogiBurger.Location = new Point(20, 259);
             rdoBulgogiBurger.Name = "rdoBulgogiBurger";
             rdoBulgogiBurger.Size = new Size(211, 49);
-            rdoBulgogiBurger.TabIndex = 2;
-            rdoBulgogiBurger.TabStop = true;
+            rdoBulgogiBurger.TabIndex = 1;
             rdoBulgogiBurger.Text = "불고기버거";
             rdoBulgogiBurger.UseVisualStyleBackColor = true;
             // 
@@ -147,7 +146,6 @@
             rdoHamBurger.Name = "rdoHamBurger";
             rdoHamBurger.Size = new Size(147, 49);
             rdoHamBurger.TabIndex = 0;
-            rdoHamBurger.TabStop = true;
             rdoHamBurger.Text = "햄버거";
             rdoHamBurger.UseVisualStyleBackColor = true;
             // 
@@ -219,7 +217,7 @@
             gbxOrder.Location = new Point(883, 115);
             gbxOrder.Name = "gbxOrder";
             gbxOrder.Size = new Size(428, 368);
-            gbxOrder.TabIndex = 2;
+            gbxOrder.TabIndex = 3;
             gbxOrder.TabStop = false;
             gbxOrder.Text = "주문 내역";
             // 
@@ -247,33 +245,46 @@
             btnOrder.BackColor = Color.FromArgb(0, 192, 0);
             btnOrder.Font = new Font("맑은 고딕", 13F);
             btnOrder.ForeColor = Color.White;
-            btnOrder.Location = new Point(883, 520);
+            btnOrder.Location = new Point(883, 528);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(224, 80);
-            btnOrder.TabIndex = 3;
+            btnOrder.TabIndex = 4;
             btnOrder.Text = "주문하기";
             btnOrder.UseVisualStyleBackColor = false;
             btnOrder.Click += btnOrder_Click;
+            btnOrder.KeyDown += btnOrder_KeyDown;
             // 
-            // btnClear
+            // btnInit
             // 
-            btnClear.BackColor = Color.FromArgb(192, 0, 0);
-            btnClear.Font = new Font("맑은 고딕", 13F);
-            btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(1130, 520);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(181, 80);
-            btnClear.TabIndex = 4;
-            btnClear.Text = "초기화";
-            btnClear.UseVisualStyleBackColor = false;
-            btnClear.Click += btnClear_Click;
+            btnInit.BackColor = Color.FromArgb(192, 0, 0);
+            btnInit.Font = new Font("맑은 고딕", 13F);
+            btnInit.ForeColor = Color.White;
+            btnInit.Location = new Point(1130, 528);
+            btnInit.Name = "btnInit";
+            btnInit.Size = new Size(181, 80);
+            btnInit.TabIndex = 5;
+            btnInit.Text = "초기화";
+            btnInit.UseVisualStyleBackColor = false;
+            btnInit.Click += btnInit_Click;
+            // 
+            // lblError
+            // 
+            lblError.AutoSize = true;
+            lblError.ForeColor = Color.Red;
+            lblError.Location = new Point(894, 487);
+            lblError.Name = "lblError";
+            lblError.Size = new Size(214, 32);
+            lblError.TabIndex = 6;
+            lblError.Text = "메뉴를 선택하세요";
+            lblError.Visible = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1394, 730);
-            Controls.Add(btnClear);
+            Controls.Add(lblError);
+            Controls.Add(btnInit);
             Controls.Add(btnOrder);
             Controls.Add(gbxOrder);
             Controls.Add(gbxOption);
@@ -313,6 +324,7 @@
         private Label lblTotalCost;
         private ListBox lstOrder;
         private Button btnOrder;
-        private Button btnClear;
+        private Button btnInit;
+        private Label lblError;
     }
 }
